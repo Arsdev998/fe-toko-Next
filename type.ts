@@ -1,4 +1,4 @@
-export interface Bannner {
+export interface Banner {
     id:string;
     label:string;
     imageUrl:string
@@ -8,6 +8,20 @@ export interface Bannner {
 export interface Category {
     id:string;
     name:string;
-    banner: Bannner;
+    banner: Banner;
     
+}
+
+export interface Product{
+    id:string;
+    category:Category;
+    name:string;
+    price:string;
+    isFeatured:boolean;
+    images: Image[]
+}
+
+export interface Image{
+    id:string;
+    url:string
 }
