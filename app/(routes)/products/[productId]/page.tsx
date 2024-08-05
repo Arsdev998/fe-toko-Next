@@ -3,6 +3,7 @@ import getProducts from "@/actions/get-products";
 import Gallery from "@/components/gallery";
 import ProductsList from "@/components/product-list";
 import Container from "@/components/ui/container";
+import Info from "@/components/ui/info";
 
 interface ProductPageProps {
     params:{
@@ -14,7 +15,6 @@ const ProductPage: React.FC<ProductPageProps> = async({params}) => {
    const suggestedProducts = await getProducts({
      categoryId: product?.category?.id,
    });
-   console.log("productttt solo",product);
    
    
     return ( 
@@ -28,7 +28,7 @@ const ProductPage: React.FC<ProductPageProps> = async({params}) => {
                         </div>
                         <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
                             {/* info */}
-                            INfo
+                           <Info data={product}/>
                         </div>
                     </div>
                     <hr className="my-10 "/>
